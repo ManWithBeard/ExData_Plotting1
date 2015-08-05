@@ -1,5 +1,6 @@
 plot4 <- function()
 {
+  png("plot4.png", height = 480, width = 480)
   
   old.par <- par(mfrow=c(2, 2))
   
@@ -11,6 +12,7 @@ plot4 <- function()
   
   global_active <- as.numeric(as.vector(time_of_interest$Global_active_power))
   
+
   
   plot(global_active, type = 'l', xaxt = "n", ylab = "Global Active Power (kilowatts)", xlab = "")
   
@@ -79,9 +81,12 @@ plot4 <- function()
   plot(global_active, type = 'l', xaxt = "n", ylab = "Global Reactive Power (kilowatts)", xlab = "")
   
   axis(1, at = c(1,1440,2880), labels = c("Thu","Fri","Sat"))
+
   
   
   par(old.par)
   
+
+  dev.off()
   
 }
