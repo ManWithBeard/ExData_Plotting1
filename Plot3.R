@@ -11,6 +11,7 @@ plot3 <- function()
   
   sub3 <- as.numeric(as.vector(time_of_interest$Sub_metering_3))
   
+  png("plot3.png", height = 480, width = 480)
   
   plot(sub1, type = 'l',  xaxt = "n", xlab = "", ylab = "Energy sub metering") #, legend(1800,0030,c("line1","line2","line3"))) #, lty = c(1,1))
   
@@ -27,6 +28,8 @@ plot3 <- function()
   rect(1700, 40, 3000, 30)
   
   box()
+  
+  dev.off()
   
   sub1
 }
