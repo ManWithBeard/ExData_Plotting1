@@ -7,5 +7,9 @@ plot1 <- function()
   
   global_active <- as.numeric(as.vector(time_of_interest$Global_active_power))
   
+  png("plot1p.png", height = 480, width = 480)
+  
   hist(global_active, col = "red", main = "Global Active Power", xlab = "Global Active Power (kilowatts)")
+  
+  dev.off()
 }
